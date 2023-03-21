@@ -13,6 +13,7 @@ public class Gato2 {
     this.color = color;
   }
 
+  //métodos getters y setter
   public void setColor(String color) {
     this.color = color;
   }
