@@ -1,6 +1,7 @@
+
 /**
  * @author Carmen Trujillo Álvarez
- * @file: ArrayCats2.java
+ * @file: Gestisimal.java
  * @info: Crea el programa GESTISIMAL para llevar el control de los artículos de un almacén. 
  */
 
