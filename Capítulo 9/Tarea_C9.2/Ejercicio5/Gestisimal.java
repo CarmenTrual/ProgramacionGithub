@@ -63,19 +63,19 @@ public class Gestisimal {
           pintaTitulo("NUEVO ARTÍCULO");
 
           if (primeraPosicionLibre() == N) {
-            System.out.println("Lo siento, la base de datos está llena.");
+            System.out.println("La base de datos está llena.");
           } else {
 
             // Introducción de datos
-            System.out.println("Por favor, introduzca los datos del artículo.");
+            System.out.println("Introduzce los datos del artículo.");
             System.out.print("Código: ");
 
             // Comprueba que el código introducido no se repita
             do {
               codigoIntroducido = s.nextLine();
               if (existeCodigo(codigoIntroducido)) {
-                System.out.println("Ese código ya existe en la base de datos.");
-                System.out.print("Introduzca otro código: ");
+                System.out.println("El código ya existe en la base de datos.");
+                System.out.print("Introduzce otro código: ");
               }
             } while (existeCodigo(codigoIntroducido));
 
@@ -100,11 +100,11 @@ public class Gestisimal {
         case 3:
           pintaTitulo("BAJA");
 
-          System.out.print("Por favor, introduzca el código del artículo: ");
+          System.out.print("Introduzce el código del artículo: ");
           codigoIntroducido = s.nextLine();
 
           if (!existeCodigo(codigoIntroducido)) {
-            System.out.println("Lo siento, el código introducido no existe.");
+            System.out.println("El código introducido no existe.");
           } else {
             articulos[posicionConCodigo(codigoIntroducido)].setCodigo("LIBRE");
             System.out.println("Artículo borrado.");
@@ -116,13 +116,13 @@ public class Gestisimal {
         case 4:
           pintaTitulo("MODIFICACIÓN");
 
-          System.out.print("Por favor, introduzca el código del artículo: ");
+          System.out.print("Introduzce el código del artículo: ");
           codigoIntroducido = s.nextLine();
 
           if (!existeCodigo(codigoIntroducido)) {
-            System.out.println("Lo siento, el código introducido no existe.");
+            System.out.println("El código introducido no existe.");
           } else {
-            System.out.print("Introduzca los nuevos datos del artículo");
+            System.out.print("Introduzce los nuevos datos del artículo");
             System.out.println(" o INTRO para dejarlos igual.");
 
             int i = posicionConCodigo(codigoIntroducido);
@@ -167,16 +167,16 @@ public class Gestisimal {
         case 5:
           pintaTitulo("ENTRADA DE MERCANCÍA");
 
-          System.out.print("Por favor, introduzca el código del artículo: ");
+          System.out.print("Introduzce el código del artículo: ");
           codigoIntroducido = s.nextLine();
 
           if (!existeCodigo(codigoIntroducido)) {
-            System.out.println("Lo siento, el código introducido no existe.");
+            System.out.println("El código introducido no existe.");
           } else {
             int i = posicionConCodigo(codigoIntroducido);
             System.out.println("Entrada de mercancía del siguiente artículo: ");
             System.out.println(articulos[i]);
-            System.out.print("Introduzca el número de unidades que entran: ");
+            System.out.print("Introduzce el número de unidades que entran: ");
             String stockIntroducidoString = s.nextLine();
             articulos[i].setStock(
                 Integer.parseInt(stockIntroducidoString) + articulos[i].getStock());
@@ -189,16 +189,16 @@ public class Gestisimal {
         case 6:
           pintaTitulo("SALIDA DE MERCANCÍA");
 
-          System.out.print("Por favor, introduzca el código del artículo: ");
+          System.out.print("Introduzce el código del artículo: ");
           codigoIntroducido = s.nextLine();
 
           if (!existeCodigo(codigoIntroducido)) {
-            System.out.println("Lo siento, el código introducido no existe.");
+            System.out.println("El código introducido no existe.");
           } else {
             int i = posicionConCodigo(codigoIntroducido);
             System.out.println("Salida de mercancía del siguiente artículo: ");
             System.out.println(articulos[i]);
-            System.out.print("Introduzca el número de unidades que desea sacar del almacén: ");
+            System.out.print("Introduzce el número de unidades que desea sacar del almacén: ");
             stockIntroducido = Integer.parseInt(s.nextLine());
             if (articulos[i].getStock() - stockIntroducido > 0) {
               articulos[i].setStock(articulos[i].getStock() - stockIntroducido);
