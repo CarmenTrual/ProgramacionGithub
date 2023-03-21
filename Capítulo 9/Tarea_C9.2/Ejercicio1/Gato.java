@@ -28,6 +28,7 @@ public class Gato {
     }
   }
 
+  //métodos getters
   public String getNombre() {
     return nombre;
   }
