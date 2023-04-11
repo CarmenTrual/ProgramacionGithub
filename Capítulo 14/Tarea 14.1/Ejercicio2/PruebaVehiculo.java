@@ -1,5 +1,7 @@
 package Ejercicio2;
 
+import java.util.Scanner;
+
 /**
  * 2. Crea la clase Vehiculo , así como las clases Bicicleta y Coche
  * como subclases de la primera. Para la clase Vehiculo , crea los
@@ -25,14 +27,16 @@ package Ejercicio2;
 public class PruebaVehiculo {
 
   public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
 
-    int opcion = 0;
+    String opcion = "";
     int km;
+    int opcionNum = 0;
 
     Bicicleta bhSpeedrom = new Bicicleta(9);
     Coche saab93 = new Coche(1900);
 
-    while (opcion != 8) {
+    while (opcionNum != 8) {
       System.out.println("\n1. Anda con la bicicleta");
       System.out.println("2. Haz un invertido con la bicicleta");
       System.out.println("3. Anda con el coche");
@@ -43,9 +47,15 @@ public class PruebaVehiculo {
       System.out.println("8. Salir");
       System.out.println("Elige una opción (1-8): ");
 
-      opcion = Integer.parseInt(System.console().readLine());
+      opcion = s.nextLine();
 
-      switch (opcion) {
+      if (isNumeric(opcion)) {
+        opcionNum = Integer.parseInt(opcion);
+      } else {
+        opcionNum = 0;
+      }
+
+      switch (opcionNum) {
         case 1:
           System.out.print("¿Cuántos kilómetros quiere recorrer? ");
           km = Integer.parseInt(System.console().readLine());
@@ -74,7 +84,12 @@ public class PruebaVehiculo {
           System.out.print("Los vehículos llevan recorridos ");
           System.out.println(Vehiculo.getKilometrosTotales() + " Km");
         default:
+          System.out.println("opcion no valida");
       } // switch
     } // while
+  }
+
+  private static boolean isNumeric(String str) {
+    return str != null && str.matches("[0-9.]+");
   }
 }
