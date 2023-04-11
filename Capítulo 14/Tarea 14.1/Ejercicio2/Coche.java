@@ -1,10 +1,10 @@
 package Ejercicio2;
 
-public class Coche2 extends Vehiculo {
+public class Coche extends Vehiculo {
 
   private int cilindrada; // cilindrada en cm3
 
-  public Coche2(int c) {
+  public Coche(int c) {
     super();
     this.cilindrada = c;
   }
