@@ -1,8 +1,7 @@
 
 /**
  * @author Carmen Trujillo Álvarez
- * @file: Gestisimal.java
- * @info: Crea el programa GESTISIMAL para llevar el control de los artículos de un almacén. 
+ * Crea el programa GESTISIMAL para llevar el control de los artículos de un almacén. 
  */
 
 import java.util.Scanner;
