@@ -34,7 +34,7 @@ public class ExpocochesMalaga {
         opcionNum = Integer.parseInt(opcion);
       } catch (Exception e) {
         opcionNum = 0;
-        System.out.println("Introduce un número.");
+        System.out.println("Opción no válida. Introduce un número.");
       }
 
       if (opcionNum == 1) {
@@ -55,7 +55,7 @@ public class ExpocochesMalaga {
           opcionNum2 = Integer.parseInt(opcion2);
         } catch (Exception e) {
           opcionNum2 = 0;
-          System.out.println("Introduce un número.");
+          System.out.println("Opción no válida. Introduce un número.");
         }
 
         System.out.print("¿Cuántas entradas quieres? ");
