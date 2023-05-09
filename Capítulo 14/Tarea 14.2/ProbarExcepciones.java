@@ -9,58 +9,58 @@ import java.io.FileNotFoundException;
 
 public class ProbarExcepciones {
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
+    try (Scanner s = new Scanner(System.in)) {
+      int menu = 0;
+      Scanner scanner = new Scanner(System.in);
 
-    int menu = 0;
-    Scanner scanner = new Scanner(System.in);
+      do {
+        System.out.println("Elige una opcion: ");
+        System.out.println("1. Provocar StackOverFlowError");
+        System.out.println("2. Provocar NumberFormatException");
+        System.out.println("3. Provocar ArrayIndexOutOfBoundsException");
+        System.out.println("4. Provocar FileNotFoundException");
+        System.out.println("5. Provocar ArithmeticException");
+        System.out.println("0. Salir");
 
-    do {
-      System.out.println("Elige una opcion: ");
-      System.out.println("1. Provocar StackOverFlowError");
-      System.out.println("2. Provocar NumberFormatException");
-      System.out.println("3. Provocar ArrayIndexOutOfBoundsException");
-      System.out.println("4. Provocar FileNotFoundException");
-      System.out.println("5. Provocar ArithmeticException");
-      System.out.println("0. Salir");
+        menu = s.nextInt();
 
-      menu = s.nextInt();
-
-      try {
-        switch (menu) {
-          case 1:
-            funcionStackOverFlow();
-            break;
-          case 2:
-            funcionNumberFormatException();
-            break;
-          case 3:
-            funcionArrayIndexOutOfBounds();
-            break;
-          case 4:
-            funcionFileNotFoundException();
-            break;
-          case 5:
-            funcionArithmeticException();
-            break;
-          case 0:
-            System.out.println("Adios!");
-            break;
-          default:
-            System.out.println("Opcion invalida.");
-            break;
+        try {
+          switch (menu) {
+            case 1:
+              funcionStackOverFlow();
+              break;
+            case 2:
+              funcionNumberFormatException();
+              break;
+            case 3:
+              funcionArrayIndexOutOfBounds();
+              break;
+            case 4:
+              funcionFileNotFoundException();
+              break;
+            case 5:
+              funcionArithmeticException();
+              break;
+            case 0:
+              System.out.println("Adios!");
+              break;
+            default:
+              System.out.println("Opcion invalida.");
+              break;
+          }
+        } catch (StackOverflowError e) {
+          System.out.println("Se ha producido un StackOverflowError: " + e.getMessage());
+        } catch (NumberFormatException e) {
+          System.out.println("Se ha producido un NumberFormatException: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+          System.out.println("Se ha producido un ArrayIndexOutOfBoundsException: " + e.getMessage());
+        } catch (FileNotFoundException e) {
+          System.out.println("Se ha producido un FileNotFoundException: " + e.getMessage());
+        } catch (ArithmeticException e) {
+          System.out.println("Se ha producido un ArithmeticException: " + e.getMessage());
         }
-      } catch (StackOverflowError e) {
-        System.out.println("Se ha producido un StackOverflowError: " + e.getMessage());
-      } catch (NumberFormatException e) {
-        System.out.println("Se ha producido un NumberFormatException: " + e.getMessage());
-      } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println("Se ha producido un ArrayIndexOutOfBoundsException: " + e.getMessage());
-      } catch (FileNotFoundException e) {
-        System.out.println("Se ha producido un FileNotFoundException: " + e.getMessage());
-      } catch (ArithmeticException e) {
-        System.out.println("Se ha producido un ArithmeticException: " + e.getMessage());
-      }
-    } while (menu != 0);
+      } while (menu != 0);
+    }
   }
 
   public static void funcionStackOverFlow() {
@@ -84,5 +84,4 @@ public class ProbarExcepciones {
   public static void funcionArithmeticException() throws ArithmeticException {
     int division = 5 / 0;
   }
-
 }

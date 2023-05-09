@@ -8,8 +8,6 @@
  */
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 public class C14_2Ejercicio1 {
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
