@@ -16,9 +16,9 @@ public class C14_2Ejercicio3 {
   public static void main(String[] args) {
     System.out.println("Introduce un número entre 0 y 4: ");
     Scanner s = new Scanner(System.in);
-    int random = s.nextInt();
+    int excepcionAleatoria = s.nextInt();
     try {
-      switch (random) {
+      switch (excepcionAleatoria) {
         case 0:
           throw new NumberFormatException();
         case 1:
