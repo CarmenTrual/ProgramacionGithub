@@ -18,14 +18,14 @@ public class Gato {
   /**
    * Hace que el gato maulle
    */
-  void maulla() {
+  public void maulla() {
     System.out.println("Miauuuu");
   }
 
   /**
    * Hace que el gato ronronee
    */
-  void ronronea() {
+  public void ronronea() {
     System.out.println("mrrrrrr");
   }
 
@@ -33,10 +33,8 @@ public class Gato {
    * Hace que el gato coma.
    * A los gatos les gusta el pescado, si le damos otra comida
    * la rechazará.
-   *
-   * @param comida la comida que se le ofrece al gato
    */
-  void come(String comida) {
+  public void come(String comida) {
     if (comida.equals("pescado")) {
       System.out.println("Hmmmm, gracias");
     } else {
@@ -47,10 +45,8 @@ public class Gato {
   /**
    * Pone a pelear dos gatos.
    * Solo se van a pelear dos machos entre sí.
-   *
-   * @param contrincante es el gato contra el que pelear
    */
-  void peleaCon(Gato contrincante) {
+  public void peleaCon(Gato contrincante) {
     if (this.sexo.equals("hembra")) {
       System.out.println("no me gusta pelear");
     } else {
@@ -65,15 +61,13 @@ public class Gato {
   /**
    * Pone a aparearse a dos gatos.
    * Solo podrán aparearse un macho y una hembra.
-   *
-   * @param guarreridaEspañola es el gato con el que pasárselo bien
    */
-
-  void apareaCon(Gato guarreridaEspañola) {
-    if (this.sexo.equals(guarreridaEspañola.sexo)) {
-      System.out.println("No soy homosexual.");
-    } else {
-      System.out.println("Vamos a darnos amor.");
+  public Gato apareaCon(Gato pareja) throws ExcepcionApareamientoImposible {
+    if (this.sexo.equals(pareja.getSexo())) {
+      throw new ExcepcionApareamientoImposible();
     }
+    String nuevoSexo = Math.random() < 0.5 ? "macho" : "hembra";
+    return new Gato(nuevoSexo);
   }
+
 }
