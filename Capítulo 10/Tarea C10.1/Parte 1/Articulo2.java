@@ -1,18 +1,22 @@
-public class Articulo {
+public class Articulo2 {
+
+  // Declaración de variables de instancia para almacenar los datos de un artículo
   private String codigo;
   private String descripcion;
   private double precioDeCompra;
   private double precioDeVenta;
   private int stock;
-  
-  public Articulo() {
+
+  // Constructor sin parámetros que inicializa el código
+  public Articulo2() {
     this.codigo = "LIBRE";
   }
 
-  public Articulo(
-    String codigo, String descripcion, double precioDeCompra,
-    double precioDeVenta, int stock) {
-      
+  // Constructor con parámetros que inicializa las variables de instancia
+  public Articulo2(
+      String codigo, String descripcion, double precioDeCompra,
+      double precioDeVenta, int stock) {
+
     this.codigo = codigo;
     this.descripcion = descripcion;
     this.precioDeCompra = precioDeCompra;
@@ -20,6 +24,7 @@ public class Articulo {
     this.stock = stock;
   }
 
+  // Métodos getter y setter para acceder y modificar las variables de instancia
   public String getCodigo() {
     return codigo;
   }
@@ -71,6 +76,3 @@ public class Articulo {
     return cadena;
   }
 }
-
-
-
