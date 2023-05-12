@@ -13,7 +13,8 @@ public class Gestisimal2 {
 
   public static void main(String[] args) {
 
-    // Declaración de variables para almacenar los valores introducidos por el usuario
+    // Declaración de variables para almacenar los valores introducidos por el
+    // usuario
     int opcion;
     int stockIntroducido;
     double precioDeCompraIntroducido;
@@ -25,7 +26,8 @@ public class Gestisimal2 {
     // Creamos un Scanner para leer lo que introduce el usuario por pantalla
     Scanner s = new Scanner(System.in);
 
-    // MENU (bucle para mostrar el menú y ejecutar las opciones seleccionadas por el usuario)
+    // MENU (bucle para mostrar el menú y ejecutar las opciones seleccionadas por el
+    // usuario)
     do {
       pintaTitulo("G E S T I S I M A L");
       System.out.println("1. Listado");
@@ -35,12 +37,12 @@ public class Gestisimal2 {
       System.out.println("5. Entrada de mercancía");
       System.out.println("6. Salida de mercancía");
       System.out.println("7. Salir");
-      
+
       // Lectura de la opción seleccionada por el usuario
       System.out.print("Introduzca una opción: ");
       opcion = Integer.parseInt(s.nextLine());
 
-    // Switch para ejecutar la opción seleccionada por el usuario
+      // Switch para ejecutar la opción seleccionada por el usuario
       switch (opcion) {
 
         // LISTADO
@@ -57,34 +59,33 @@ public class Gestisimal2 {
         case 2:
           pintaTitulo("NUEVO ARTÍCULO");
 
-            // Introducción de datos
-            System.out.println("Introduzce los datos del artículo.");
-            System.out.print("Código: ");
+          // Introducción de datos
+          System.out.println("Introduzce los datos del artículo.");
+          System.out.print("Código: ");
 
-            // Comprueba que el código introducido no se repita
-            do {
-              codigoIntroducido = s.nextLine();
-              if (existeCodigo(codigoIntroducido)) {
-                System.out.println("El código ya existe en la base de datos.");
-                System.out.print("Introduzce otro código: ");
-              }
-            } while (existeCodigo(codigoIntroducido));
+          // Comprueba que el código introducido no se repita
+          do {
+            codigoIntroducido = s.nextLine();
+            if (existeCodigo(codigoIntroducido)) {
+              System.out.println("El código ya existe en la base de datos.");
+              System.out.print("Introduzce otro código: ");
+            }
+          } while (existeCodigo(codigoIntroducido));
 
-            // Lee el resto de datos del artículo
-            System.out.print("Descripcion: ");
-            descripcionIntroducida = s.nextLine();
-            System.out.print("Precio de compra: ");
-            precioDeCompraIntroducido = Double.parseDouble(s.nextLine());
-            System.out.print("Precio de venta: ");
-            precioDeVentaIntroducido = Double.parseDouble(s.nextLine());
-            System.out.print("Stock: ");
-            stockIntroducido = Integer.parseInt(s.nextLine());
+          // Lee el resto de datos del artículo
+          System.out.print("Descripcion: ");
+          descripcionIntroducida = s.nextLine();
+          System.out.print("Precio de compra: ");
+          precioDeCompraIntroducido = Double.parseDouble(s.nextLine());
+          System.out.print("Precio de venta: ");
+          precioDeVentaIntroducido = Double.parseDouble(s.nextLine());
+          System.out.print("Stock: ");
+          stockIntroducido = Integer.parseInt(s.nextLine());
 
-            // Crea el nuevo artículo y lo agrega al ArrayList
-            articulos.add(new Articulo2(
-                codigoIntroducido, descripcionIntroducida, precioDeCompraIntroducido,
-                precioDeVentaIntroducido, stockIntroducido));
-          }
+          // Crea el nuevo artículo y lo agrega al ArrayList
+          articulos.add(new Articulo2(
+              codigoIntroducido, descripcionIntroducida, precioDeCompraIntroducido,
+              precioDeVentaIntroducido, stockIntroducido));
           break;
 
         // BAJA
@@ -98,8 +99,9 @@ public class Gestisimal2 {
           if (!existeCodigo(codigoIntroducido)) {
             System.out.println("El código introducido no existe.");
           } else {
-            
-            // Si existe, cambia su código a "LIBRE" para indicar que está disponible para ser reutilizado
+
+            // Si existe, cambia su código a "LIBRE" para indicar que está disponible para
+            // ser reutilizado
             articulos.get(posicionConCodigo(codigoIntroducido)).setCodigo("LIBRE");
             System.out.println("Artículo borrado.");
           }
@@ -118,7 +120,8 @@ public class Gestisimal2 {
             System.out.println("El código introducido no existe.");
           } else {
 
-            // Si existe, muestra los datos actuales del artículo y permite al usuario modificarlos
+            // Si existe, muestra los datos actuales del artículo y permite al usuario
+            // modificarlos
             System.out.print("Introduzce los nuevos datos del artículo");
             System.out.println(" o INTRO para dejarlos igual.");
 
@@ -179,7 +182,8 @@ public class Gestisimal2 {
             System.out.println("El código introducido no existe.");
           } else {
 
-            // Si existe, muestra los datos del artículo y permite al usuario agregar mercancía
+            // Si existe, muestra los datos del artículo y permite al usuario agregar
+            // mercancía
             int i = posicionConCodigo(codigoIntroducido);
             System.out.println("Entrada de mercancía del siguiente artículo: ");
             System.out.println(articulos.get(i));
@@ -206,14 +210,16 @@ public class Gestisimal2 {
             System.out.println("El código introducido no existe.");
           } else {
 
-            // Si existe, muestra los datos del artículo y permite al usuario sacar mercancía
+            // Si existe, muestra los datos del artículo y permite al usuario sacar
+            // mercancía
             int i = posicionConCodigo(codigoIntroducido);
             System.out.println("Salida de mercancía del siguiente artículo: ");
             System.out.println(articulos.get(i));
             System.out.print("Introduzce el número de unidades que desea sacar del almacén: ");
             stockIntroducido = Integer.parseInt(s.nextLine());
 
-            // Comprueba si hay suficiente stock para sacar para sacar el número de artículos seleccionados
+            // Comprueba si hay suficiente stock para sacar para sacar el número de
+            // artículos seleccionados
             if (articulos.get(i).getStock() - stockIntroducido > 0) {
               // Si hay stock, actualiza el stock del artículo restando las unidades que salen
               articulos.get(i).setStock(articulos.get(i).getStock() - stockIntroducido);
@@ -226,8 +232,8 @@ public class Gestisimal2 {
           }
           break;
 
-       // switch
-    }while(opcion!=7);
+      }// switch
+    } while (opcion != 7);
   }
 
   // FUNCIONES
