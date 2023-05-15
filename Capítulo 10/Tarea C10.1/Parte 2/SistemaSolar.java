@@ -1,9 +1,3 @@
-/* SistemaSolar.java
-* Define una jerarquía de clases que permita almacenar datos sobre los planetas y satélites que 
-* forman parte del sistema solar.
-* @CarmenTrual
-*/
-
 import java.util.Scanner;
 
 public class SistemaSolar {
