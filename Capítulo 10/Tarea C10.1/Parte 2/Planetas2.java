@@ -1,19 +1,22 @@
-public class Planetas extends Astros {
-  // Atributos específicos de la clase Planetas
-  private double distanciaSol;
-  private Satelites[] satelites; // Array de satélites del planeta
-  private boolean tieneSatelites;
+import java.util.ArrayList;
 
-  // Constructor que inicializa los atributos específicos de la clase Planetas y
-  // llama al constructor de Astros para inicializar sus atributos
-  public Planetas(double masa, double diametroMedio, double periodoRotacion, double periodoTraslacion,
-      double distanciaMedia, boolean tieneSatelites, String string) {
+public class Planetas2 extends Astros2 {
+  // Atributos específicos de la clase Planetas2
+  private double distanciaSol;
+  private ArrayList<Satelites2> satelites2; // Array de satélites del planeta
+  private boolean tieneSatelites2;
+
+  // Constructor que inicializa los atributos específicos de la clase Planetas2 y
+  // llama al constructor de Astros2 para inicializar sus atributos
+  public Planetas2(double masa, double diametroMedio, double periodoRotacion, double periodoTraslacion,
+      double distanciaMedia, boolean tieneSatelites2, String string) {
     super(masa, diametroMedio, periodoRotacion, periodoTraslacion, distanciaMedia, string);
-    this.tieneSatelites = tieneSatelites;
+    this.tieneSatelites2 = tieneSatelites2;
+    this.satelites2 = new ArrayList<Satelites2>(); // Inicializar la lista de satélites
   }
 
   // Métodos para obtener y establecer los valores de los atributos específicos de
-  // la clase Planetas
+  // la clase Planetas2
   public double getDistanciaSol() {
     return distanciaSol;
   }
@@ -22,22 +25,17 @@ public class Planetas extends Astros {
     this.distanciaSol = distanciaSol;
   }
 
-  public Satelites[] getSatelites() {
-    return satelites;
+  public ArrayList<Satelites2> getSatelites2() {
+    return satelites2;
   }
 
-  public void setSatelites(Satelites[] satelites) {
-    this.satelites = satelites;
+  public void setSatelites2(ArrayList<Satelites2> satelites2) {
+    this.satelites2 = satelites2;
   }
 
   // Método para añadir un satélite al array de satélites del planeta
-  public void anadirSatelite(Satelites satelite, int indice) {
-    satelites[indice] = satelite;
-  }
-
-  // Método para inicializar el array de satélites del planeta
-  public void inicializarSatelites(int cantidadSatelites) {
-    this.satelites = new Satelites[cantidadSatelites];
+  public void anadirSatelite(Satelites2 satelite, int indice) {
+    satelites2.add(indice, satelite);
   }
 
   // Método para mostrar la información específica del planeta y la lista de
@@ -52,12 +50,12 @@ public class Planetas extends Astros {
     System.out.println("Distancia media: " + getDistanciaMedia() + " km");
     System.out.println("Distancia al Sol: " + distanciaSol + " km");
     System.out.println("Satélites: ");
-    for (Satelites satelite : satelites) {
+    for (Satelites2 satelite : satelites2) {
       satelite.muestra();
     }
   }
 
-  public boolean getTieneSatelites() {
-    return tieneSatelites;
+  public boolean getTieneSatelites2() {
+    return tieneSatelites2;
   }
 }

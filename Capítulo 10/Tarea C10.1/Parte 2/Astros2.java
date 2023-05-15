@@ -1,5 +1,5 @@
-public abstract class Astros {
-  // Atributos de la clase Astros
+public abstract class Astros2 {
+  // Atributos de la clase Astros2
   private double masa;
   private double diametroMedio;
   private double periodoRotacion;
@@ -7,8 +7,8 @@ public abstract class Astros {
   private double distanciaMedia;
   private String nombre;
 
-  // Constructor que inicializa los atributos de la clase Astros
-  public Astros(double masa, double diametroMedio, double periodoRotacion, double periodoTraslacion,
+  // Constructor que inicializa los atributos de la clase Astros2
+  public Astros2(double masa, double diametroMedio, double periodoRotacion, double periodoTraslacion,
       double distanciaMedia, String string) {
     this.masa = masa;
     this.diametroMedio = diametroMedio;
@@ -19,7 +19,7 @@ public abstract class Astros {
   }
 
   // Métodos para obtener y establecer los valores de los atributos de la clase
-  // Astros
+  // Astros2
   public double getMasa() {
     return masa;
   }

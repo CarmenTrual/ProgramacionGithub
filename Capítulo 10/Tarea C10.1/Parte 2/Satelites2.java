@@ -1,18 +1,18 @@
-public class Satelites {
-  // Atributos de la clase Satelites
+public class Satelites2 {
+  // Atributos de la clase Satelites2
   private String nombre;
   private double masa;
   private double diametro;
 
-  // Constructor de la clase Satelites
-  public Satelites(String nombre, double masa, double diametro) {
+  // Constructor de la clase Satelites2
+  public Satelites2(String nombre, double masa, double diametro) {
     this.nombre = nombre;
     this.masa = masa;
     this.diametro = diametro;
   }
 
   // Métodos para obtener y establecer los valores de los atributos de la clase
-  // Satelites
+  // Satelites2
   public String getNombre() {
     return nombre;
   }
@@ -37,7 +37,7 @@ public class Satelites {
     this.diametro = diametro;
   }
 
-  // Método para mostrar la información de la clase Satelites
+  // Método para mostrar la información de la clase Satelites2
   public void muestra() {
     System.out.println("Satélite: " + nombre);
     System.out.println("Masa: " + masa + " kg");
