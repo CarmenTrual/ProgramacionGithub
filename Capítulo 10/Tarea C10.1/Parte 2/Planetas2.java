@@ -33,14 +33,10 @@ public class Planetas2 extends Astros2 {
   }
 
   // Método para añadir un satélite al array de satélites del planeta
-  //public void anadirSatelite(Satelites2 satelite, int indice) {
-  //satelites.add(satelite);
-  //}
   public void anadirSatelite(Satelites2 satelite) {
-  satelites.add(satelite);
-  tieneSatelites = true;
+    satelites.add(satelite);
+    tieneSatelites = true;
   }
-
 
   // Método para mostrar la información específica del planeta y la lista de
   // satélites que tiene
@@ -56,13 +52,13 @@ public class Planetas2 extends Astros2 {
     System.out.println("Satélites: ");
     if (satelites.isEmpty()) {
       System.out.println("no tiene");
-}     else {
-        for (Satelites2 satelite : satelites) {
-          satelite.muestra();
-        }
+    } else {
+      for (Satelites2 satelite : satelites) {
+        satelite.muestra();
       }
+    }
     // Imprimir el separador
-  System.out.println("------------------");
+    System.out.println("------------------");
   }
 
   public boolean getTieneSatelites() {
