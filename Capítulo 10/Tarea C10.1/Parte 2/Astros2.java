@@ -18,8 +18,7 @@ public abstract class Astros2 {
     this.nombre = string;
   }
 
-  // Métodos para obtener y establecer los valores de los atributos de la clase
-  // Astros2
+  // Getters y sets
   public double getMasa() {
     return masa;
   }
