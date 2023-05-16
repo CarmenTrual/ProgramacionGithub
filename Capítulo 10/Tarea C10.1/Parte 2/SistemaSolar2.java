@@ -58,15 +58,15 @@ public class SistemaSolar2 {
 
       switch (opcion) {
         case 1:
-          System.out.println("Información de los planetas:");
+          System.out.println("Información de los planetas:"); // Mostrar información de los planetas
           for (Planetas2 planeta : planetas) {
             planeta.muestra();
           }
           break;
         case 2:
-          System.out.println("Información de los satélites:");
+          System.out.println("Información de los satélites:"); // Mostrar información de los satélites
           for (Planetas2 planeta : planetas) {
-            if (planeta.getTieneSatelites()) {
+            if (planeta.getTieneSatelites()) { // Si el planeta tiene satélites, mostrar información de cada satélite
               for (Satelites2 satelite : planeta.getSatelites()) {
                 satelite.muestra();
               }
@@ -75,27 +75,30 @@ public class SistemaSolar2 {
           break;
         case 3:
           System.out.println("Ingrese el nombre del astro:");
-          String nombre = s.next();
+          String nombre = s.next(); // Mostrar información de un astro específico (planeta o satélite)
           boolean encontrado = false;
           for (Planetas2 planeta : planetas) {
-            if (planeta.getNombre().equals(nombre)) {
+            if (planeta.getNombre().equals(nombre)) { // Si el nombre coincide con el de un planeta, mostrar información
+                                                      // del planeta
               encontrado = true;
               planeta.muestra();
               break;
-            } else if (planeta.getTieneSatelites()) {
+            } else if (planeta.getTieneSatelites()) { // Si el planeta tiene satélites, buscar el nombre entre los
+                                                      // satélites
               for (Satelites2 satelite : planeta.getSatelites()) {
-                if (satelite.getNombre().equals(nombre)) {
+                if (satelite.getNombre().equals(nombre)) { // Si el nombre coincide con el de un satélite, mostrar
+                                                           // información del satélite
                   encontrado = true;
                   satelite.muestra();
                   break;
                 }
               }
-              if (encontrado) {
+              if (encontrado) { // Si se encuentra el astro, salir del bucle
                 break;
               }
             }
           }
-          if (!encontrado) {
+          if (!encontrado) { // Si no se encuentra ningúno, mostrar mensaje de error
             System.out.println("No se encontró ningún astro con ese nombre.");
           }
           break;

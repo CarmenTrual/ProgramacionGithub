@@ -55,6 +55,8 @@ public class Planetas extends Astros {
     for (Satelites satelite : satelites) {
       satelite.muestra();
     }
+    // Imprimir el separador
+    System.out.println("------------------");
   }
 
   public boolean getTieneSatelites() {
