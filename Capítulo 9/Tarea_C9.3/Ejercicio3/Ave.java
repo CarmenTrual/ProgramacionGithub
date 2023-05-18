@@ -1,21 +1,17 @@
 public abstract class Ave extends Mascotas {
-  // Atributos
   private String pico;
   private boolean vuela;
 
-  // Constructor
-  public Ave(String nombre, int edad, String estado, String fechaNacimiento, String tipo, String pico, boolean vuela) {
-    super(nombre, edad, estado, fechaNacimiento, tipo);
+  public Ave(String nombre, int edad, String estado, String pico, boolean vuela, int diaN, int mesN,
+      int anioN) {
+    super(nombre, edad, estado, diaN, mesN, anioN);
     this.pico = pico;
     this.vuela = vuela;
   }
 
-  // Métodos
-  public void volar() {
-    if (vuela) {
-      System.out.println("Estoy volando");
-    } else {
-      System.out.println("No puedo volar");
-    }
+  public void muestra() {
+    super.muestra();
+    System.out.println("Pico: " + pico);
+    System.out.println("Vuela: " + (vuela ? "Sí" : "No"));
   }
 }

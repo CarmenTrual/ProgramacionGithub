@@ -1,31 +1,17 @@
 public class Gato extends Mascotas {
-  // Atributos
   private String color;
   private boolean peloLargo;
 
-  // Constructor
-  public Gato(String nombre, int edad, String estado, String fechaNacimiento, String color, boolean peloLargo) {
-    super(nombre, edad, estado, fechaNacimiento, "Gato");
+  public Gato(String nombre, int edad, String estado, String color, boolean peloLargo, int diaN, int mesN,
+      int anioN) {
+    super(nombre, edad, estado, diaN, mesN, anioN);
     this.color = color;
     this.peloLargo = peloLargo;
   }
 
-  // Métodos
-  @Override
   public void muestra() {
-    System.out.println("Soy un gato de color " + color + " y tengo " + (peloLargo ? "pelo largo" : "pelo corto"));
-  }
-
-  @Override
-  public void habla() {
-    System.out.println("Miau miau");
-  }
-
-  @Override
-  public void cumpleaños() {
-  }
-
-  @Override
-  public void morir() {
+    super.muestra();
+    System.out.println("Color: " + color);
+    System.out.println("Pelo largo: " + (peloLargo ? "Sí" : "No"));
   }
 }

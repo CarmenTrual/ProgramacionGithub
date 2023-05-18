@@ -1,51 +1,79 @@
 import java.util.ArrayList;
 
 public class Inventario {
-  // Atributos
-  private ArrayList<Mascotas> animales; // Declaramos el arraylist
+  // ArrayList
+  private ArrayList<Mascotas> animales;
 
   // Constructor
   public Inventario() {
-    animales = new ArrayList<Mascotas>(); // Inicializamos el ArrayList
+    // Inicializamos el ArrayList
+    animales = new ArrayList<Mascotas>();
   }
 
-  // Método para agregar un animal al inventario
-  public void agregarAnimal(Mascotas animal) {
-    // Agregamos el animal al final del ArrayList
-    animales.add(animal);
+  // Métodos
+  public void insertar(Mascotas mascota) {
+    // Añadimos el animal al ArrayList
+    animales.add(mascota);
+    System.out.println(mascota.getNombre() + " ha sido añadido al inventario.");
   }
 
-  // Método para eliminar un animal
-  public void eliminarAnimal(Mascotas animal) {
-    animales.remove(animal);
-  }
-
-  // Método para mostrar la lista de animales
-  public void mostrarListaAnimales() {
-    for (Mascotas animal : animales) {
-      System.out.println(animal.getTipo() + " - " + animal.getNombre());
+  public void mostrar() {
+    System.out.println("Lista de animales:");
+    // Muestra el nombre y tipo de cada animal
+    for (Mascotas mascota : animales) {
+      System.out.println(mascota.getNombre() + " - " + mascota.getClass().getSimpleName());
     }
   }
 
-  // Método para mostrar información sobre un animal en particular
-  public void mostrarAnimal(String nombre) {
-    for (Mascotas animal : animales) {
-      if (animal.getNombre().equals(nombre)) {
-        animal.muestra();
-        break;
+  public void mostrarDatosAnimal(String nombre) {
+    // Busca un animal específico
+    for (Mascotas mascota : animales) {
+      if (mascota.getNombre().equals(nombre)) {
+        System.out.println("Datos del animal:");
+        System.out.println("Nombre: " + mascota.getNombre());
+        System.out.println("Edad: " + mascota.getEdad() + " años");
+        System.out.println("Estado: " + mascota.getEstado());
+        mascota.muestra();
+        return;
       }
     }
+    // Si no se encuentra, mostramos un mensaje
+    System.out.println("No se ha encontrado al animal.");
   }
 
-  // Método para mostrar información sobre todos los animales
-  public void mostrarTodosAnimales() {
-    for (Mascotas animal : animales) {
-      animal.muestra();
+  public void buscarAnimal(String nombre) {
+    // Busca un animal específico
+    for (Mascotas mascota : animales) {
+      if (mascota.getNombre().equals(nombre)) {
+        // Si encontramos el animal, lo mostramos
+        mascota.muestra();
+        return;
+      }
+    }
+    // Si no lo encontramos, mostramos un mensaje
+    System.out.println("No se ha encontrado al animal.");
+  }
+
+  public void mostrarTodosDatos() {
+    System.out.println("Datos de todos los animales:");
+    // Muestra los datos de cada animal
+    for (Mascotas mascota : animales) {
+      mascota.muestra();
+      System.out.println();
     }
   }
 
-  // Método para vaciar el inventario
-  public void vaciarInventario() {
-    animales.clear();
+  public void eliminar(String nombre) {
+    // Busca un animal específico
+    for (int i = 0; i < animales.size(); i++) {
+      if (animales.get(i).getNombre().equals(nombre)) {
+        // Si se encuentra, lo eliminamos
+        animales.remove(i);
+        System.out.println(nombre + " ha sido eliminado del inventario.");
+        return;
+      }
+    }
+    // Si no se encuentra, mostramos un mensaje
+    System.out.println("No se ha encontrado al animal.");
   }
 }

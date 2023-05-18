@@ -1,36 +1,25 @@
 public class Canario extends Ave {
-  // Atributos
+  // Atributo para almacenar el color del canario
   private String color;
+  // Atributo para indicar si el canario canta o no
   private boolean canta;
 
-  // Constructor
-  public Canario(String nombre, int edad, String estado, String fechaNacimiento, String pico, boolean vuela,
-      String color, boolean canta) {
-    super(nombre, edad, estado, fechaNacimiento, "Canario", pico, vuela);
+  // Constructor de la clase Canario
+  public Canario(String nombre, int edad, String estado, String pico, boolean vuela, String color, boolean canta,
+      int diaN, int mesN, int anioN) {
+    // Llamamos al constructor de la clase Ave
+    super(nombre, edad, estado, pico, vuela, anioN, anioN, anioN);
+    // Inicializamos los atributos color y canta
     this.color = color;
     this.canta = canta;
   }
 
-  // Métodos
-  @Override
+  // Sobrescribimos el método muestra para mostrar los datos del canario
   public void muestra() {
-    System.out.println("Canario - " + color + " que " + (canta ? "canta" : "no puedo canta"));
-  }
-
-  @Override
-  public void habla() {
-    if (canta) {
-      System.out.println("Pío pío");
-    } else {
-      System.out.println("...");
-    }
-  }
-
-  @Override
-  public void cumpleaños() {
-  }
-
-  @Override
-  public void morir() {
+    // Llamamos al método muestra de la clase Ave
+    super.muestra();
+    // Mostramos el color y si canta o no el canario
+    System.out.println("Color: " + color);
+    System.out.println("Canta: " + (canta ? "Sí" : "No"));
   }
 }

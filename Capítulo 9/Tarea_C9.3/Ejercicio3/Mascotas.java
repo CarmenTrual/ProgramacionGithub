@@ -1,62 +1,60 @@
 public abstract class Mascotas {
-  // Atributos
+  // Declaramos los atributos de la clase Mascotas
   private String nombre;
   private int edad;
   private String estado;
-  private String fechaNacimiento;
-  private String tipo;
+  private boolean habla;
+  private int diaN;
+  private int mesN;
+  private int anioN;
 
-  // Constructor
-  public Mascotas(String nombre, int edad, String estado, String fechaNacimiento, String tipo) {
+  // Constructor de la clase Mascotas
+  public Mascotas(String nombre, int edad, String estado, int diaN, int mesN, int anioN) {
     this.nombre = nombre;
     this.edad = edad;
     this.estado = estado;
-    this.fechaNacimiento = fechaNacimiento;
+    this.habla = false;
+    this.diaN = diaN;
+    this.mesN = mesN;
+    this.anioN = anioN;
   }
 
-  // Métodos
-  public abstract void muestra();
+  // Método para mostrar los datos de la mascota
+  public void muestra() {
+    System.out.println("Nombre: " + nombre);
+    System.out.println("Edad: " + edad);
+    System.out.println("Estado: " + estado);
+    System.out.println("Habla: " + (habla ? "Sí" : "No"));
+  }
 
-  public abstract void cumpleaños();
+  // Método para mostrar la fecha de cumpleaños de la mascota
+  public void cumple() {
+    System.out.println("La mascota cumple años el " + diaN + "/" + mesN);
+  }
 
-  public abstract void morir();
+  // Método para cambiar el estado de la mascota a "muerto"
+  public void morir() {
+    estado = "muerto";
+  }
 
-  public abstract void habla();
+  // Método para hacer que la mascota hable
+  public void habla() {
+    habla = true;
+  }
 
-  // Getters y setters
+  // Métodos getters para obtener los valores de los atributos
   public String getNombre() {
     return nombre;
-  }
-
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
   }
 
   public int getEdad() {
     return edad;
   }
 
-  public void setEdad(int edad) {
-    this.edad = edad;
-  }
-
   public String getEstado() {
     return estado;
   }
 
-  public void setEstado(String estado) {
-    this.estado = estado;
-  }
-
-  public String getFechanacimiento() {
-    return fechaNacimiento;
-  }
-
-  public void setFechaNacimiento(String fechaNacimiento) {
-    this.fechaNacimiento = fechaNacimiento;
-  }
-
-  public String getTipo() { // Nuevo getter para obtener el tipo de animal
-    return tipo;
+  public void mostrarDatos() {
   }
 }

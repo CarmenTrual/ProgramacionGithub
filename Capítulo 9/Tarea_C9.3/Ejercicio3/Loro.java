@@ -1,44 +1,21 @@
 public class Loro extends Ave {
-  // Atributos
+  // Atributo para almacenar el origen del loro
   private String origen;
-  private boolean habla;
 
-  // Constructor
-  public Loro(String nombre, int edad, String estado, String fechaNacimiento, String pico, boolean vuela, String origen,
-      boolean habla) {
-    super(nombre, edad, estado, fechaNacimiento, "Loro", pico, vuela);
+  // Constructor de la clase Loro
+  public Loro(String nombre, int edad, String estado, String pico, boolean vuela, String origen, int diaN, int mesN,
+      int anioN) {
+    // Llamamos al constructor de la clase Ave
+    super(nombre, edad, estado, pico, vuela, anioN, anioN, anioN);
+    // Inicializamos el atributo origen
     this.origen = origen;
-    this.habla = habla;
   }
 
-  // Métodos
-  @Override
+  // Sobrescribimos el método muestra para mostrar los datos del loro
   public void muestra() {
-    System.out.println("Soy un loro de origen " + origen + " y " + (habla ? "puedo hablar" : "no puedo hablar"));
-  }
-
-  public void saluda() {
-    if (habla) {
-      System.out.println("Hola");
-    } else {
-      System.out.println("...");
-    }
-  }
-
-  @Override
-  public void habla() {
-    if (habla) {
-      System.out.println("Quiero pipas");
-    } else {
-      System.out.println("...");
-    }
-  }
-
-  @Override
-  public void cumpleaños() {
-  }
-
-  @Override
-  public void morir() {
+    // Llamamos al método muestra de la clase Ave
+    super.muestra();
+    // Mostramos el origen del loro
+    System.out.println("Origen: " + origen);
   }
 }
