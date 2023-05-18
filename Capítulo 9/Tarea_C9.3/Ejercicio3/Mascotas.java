@@ -1,5 +1,5 @@
 public abstract class Mascotas {
-  // Declaramos los atributos de la clase Mascotas
+  // Declaramos
   private String nombre;
   private int edad;
   private String estado;
@@ -8,7 +8,7 @@ public abstract class Mascotas {
   private int mesN;
   private int anioN;
 
-  // Constructor de la clase Mascotas
+  // Constructor
   public Mascotas(String nombre, int edad, String estado, int diaN, int mesN, int anioN) {
     this.nombre = nombre;
     this.edad = edad;
@@ -19,7 +19,7 @@ public abstract class Mascotas {
     this.anioN = anioN;
   }
 
-  // Método para mostrar los datos de la mascota
+  // Métodos
   public void muestra() {
     System.out.println("Nombre: " + nombre);
     System.out.println("Edad: " + edad);
@@ -27,22 +27,18 @@ public abstract class Mascotas {
     System.out.println("Habla: " + (habla ? "Sí" : "No"));
   }
 
-  // Método para mostrar la fecha de cumpleaños de la mascota
   public void cumple() {
     System.out.println("La mascota cumple años el " + diaN + "/" + mesN);
   }
 
-  // Método para cambiar el estado de la mascota a "muerto"
   public void morir() {
     estado = "muerto";
   }
 
-  // Método para hacer que la mascota hable
   public void habla() {
     habla = true;
   }
 
-  // Métodos getters para obtener los valores de los atributos
   public String getNombre() {
     return nombre;
   }
