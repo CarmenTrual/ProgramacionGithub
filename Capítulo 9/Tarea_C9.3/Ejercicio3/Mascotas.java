@@ -1,5 +1,5 @@
 public abstract class Mascotas {
-  // Declaramos
+  // Atributos
   private String nombre;
   private int edad;
   private String estado;
