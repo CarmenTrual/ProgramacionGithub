@@ -5,8 +5,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthScrollBarUI;
-
 public class Banco {
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
@@ -17,6 +15,7 @@ public class Banco {
     boolean continuar = true;
     ArrayList<CuentaBancaria> cuentas = new ArrayList<>();
     while (continuar) {
+      // Mostrar el menú de operaciones
       System.out.println(
           "¿Qué operación deseas realizar? (1: Crear cuenta, 2: Realizar operaciones con una cuenta existente, 3: Realizar transferencia entre cuentas): ");
       int operacion = s.nextInt();
@@ -38,6 +37,7 @@ public class Banco {
           nuevaCuenta = new CuentaAhorro(numCuenta, 2);
         }
 
+        // Agregar la nueva cuenta al ArrayList de cuentas
         cuentas.add(nuevaCuenta);
         System.out.println("Cuenta creada con éxito.");
       } else if (operacion == 2) {
@@ -45,6 +45,7 @@ public class Banco {
         System.out.println("Ingresa el número de cuenta: ");
         int numCuenta = s.nextInt();
 
+        // Buscar la cuenta especificada en el ArrayList de cuentas
         CuentaBancaria cuentaElegida = null;
         for (CuentaBancaria cuenta : cuentas) {
           if (cuenta.getNumCuenta() == numCuenta) {
@@ -53,20 +54,24 @@ public class Banco {
           }
         }
 
+        // Verificar si se encontró la cuenta especificada
         if (cuentaElegida == null) {
           System.out.println("No se encontró la cuenta especificada.");
           continue;
         }
 
+        // Mostrar el menú de operaciones con la cuenta
         System.out.println("¿Qué operación deseas realizar? (1: Ingresar dinero, 2: Retirar dinero): ");
         int operacionCuenta = s.nextInt();
 
         if (operacionCuenta == 1) {
+          // Ingresar dinero en la cuenta
           System.out.println("Ingresa la cantidad a ingresar: ");
           int cantidad = s.nextInt();
           cuentaElegida.ingresar(cantidad);
           System.out.println("Saldo después del ingreso: " + cuentaElegida.getSaldo());
         } else if (operacionCuenta == 2) {
+          // Retirar dinero de la cuenta
           System.out.println("Ingresa la cantidad a retirar: ");
           int cantidad = s.nextInt();
           cuentaElegida.retirar(cantidad);
@@ -120,7 +125,6 @@ public class Banco {
     if (respuesta.equalsIgnoreCase("n")) {
       continuar = false;
     }
+    System.out.println("Gracias por utilizar OnlineBank, vuelva pronto. ");
   }
-  System.out.println("Gracias por utilizar OnlineBank, vuelva pronto. ");
-
 }

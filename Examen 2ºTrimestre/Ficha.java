@@ -48,15 +48,4 @@ public class Ficha {
     }
     return "[" + l1 + "||" + l2 + ']';
   }
-
-  /*
-   * otra posibilidad de toString()
-   * 
-   * @Override
-   * public String toString() {
-   * return "[" + (lado1 == 0 ? " " : lado1) + "||" + (lado2 == 0 ? " " : lado2) +
-   * ']';
-   * }
-   */
-
 }
