@@ -1,6 +1,6 @@
 public class Aereo extends Vehiculo {
   // Atributo
-  int numAsientos;
+  private int numAsientos;
 
   // Constructor
   public Aereo(String matricula, String modelo, int numAsientos) {
