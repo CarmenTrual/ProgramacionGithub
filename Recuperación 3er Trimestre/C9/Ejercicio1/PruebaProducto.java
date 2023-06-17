@@ -38,5 +38,17 @@ public class PruebaProducto {
     Productos.add(producto4);
     Productos.add(producto5);
 
+    /*
+     * Visualizar contenido del ArrayList (como no se hacerlo con Iterator,
+     * voy a utilizar un bucle for)
+     */
+    System.out.println("Lista de productos: ");
+
+    for (int i = 0; i < Productos.size(); i++) {
+
+      Producto producto = Productos.get(i);
+      System.out.println(producto.getNombre() + ": " + producto.getCantidad());
+    }
+
   }
 }
