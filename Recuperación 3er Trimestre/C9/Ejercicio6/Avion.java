@@ -16,6 +16,6 @@ public class Avion extends Aereo {
   @Override
   public void imprimir() {
     super.imprimir();
-    System.out.println("El tiempo máximo de vuelo es: " + tiempoVueloMax);
+    System.out.println("El tiempo máximo de vuelo es: " + tiempoVueloMax + " horas. ");
   }
 }

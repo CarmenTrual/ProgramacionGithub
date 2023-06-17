@@ -13,7 +13,7 @@ public class Terrestre extends Vehiculo {
     return numRuedas;
   }
 
-  @Override
+  @Override // Sobreescribe el método imprimir de la clase Vehículo
   public void imprimir() {
     super.imprimir();
     System.out.println("Tiene " + numRuedas + " ruedas. ");

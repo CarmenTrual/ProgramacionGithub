@@ -9,5 +9,17 @@ public class Vehiculo {
     this.modelo = modelo;
   }
 
-  //
+  // Métodos
+  public void imprimir() {
+    System.out.println("Matrícula: " + matricula + ", Modelo: " + modelo);
+  }
+
+  public String getMatricula() {
+    return matricula;
+  }
+
+  public String getModelo() {
+    return modelo;
+  }
+
 }

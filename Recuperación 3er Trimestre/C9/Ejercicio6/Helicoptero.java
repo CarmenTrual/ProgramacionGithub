@@ -16,6 +16,6 @@ public class Helicoptero extends Aereo {
   @Override
   public void imprimir() {
     super.imprimir();
-    System.out.println("Tiene " + numHelices + "hélices. ");
+    System.out.println("Tiene " + numHelices + " hélices. ");
   }
 }

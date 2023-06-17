@@ -36,20 +36,49 @@ public class Programa {
   public static void main(String[] args) {
 
     // Instancias
-    Coche coche = new Coche();
-    Coche coche = new Coche();
-    Moto moto = new Moto(null, null, 0, null);
-    Moto moto = new Moto();
-    Barco barco = new Barco();
-    Barco barco = new Barco();
-    Submarino submarino = new Submarino();
-    Submarino submarino = new Submarino();
-    Avion avion = new Avion();
-    Avion avion = new Avion();
-    Helicoptero helicoptero = new Helicoptero();
-    Helicoptero helicoptero = new Helicoptero();
+    Coche coche1 = new Coche("1425DRE", "Seat Ibiza", 4, true);
+    Coche coche2 = new Coche("2002AMA", "Ford Fiesta", 4, false);
+    Moto moto1 = new Moto("8574LAS", "Honda CB125R", 2, "Negro");
+    Moto moto2 = new Moto("0658BOB", "Yamaha XT225", 2, "Rojo");
+    Barco barco1 = new Barco("SDRCCC", "Beneteau Oceanis 45", 13.85, true);
+    Barco barco2 = new Barco("TGYJI", "Boston Whaler 230 Vantage", 7.01, true);
+    Submarino submarino1 = new Submarino("1111DDD", "Virginia-class", 115, 230);
+    Submarino submarino2 = new Submarino("2222DDD", "Type 212A", 56, 235);
+    Avion avion1 = new Avion("EEEE111111", "Boeing 747-8", 450, 5);
+    Avion avion2 = new Avion("HHHH222222", "Gulfstream G650ER", 18, 4);
+    Helicoptero helicoptero1 = new Helicoptero("HJIL555555", "Sikorsky S-92", 15, 5);
+    Helicoptero helicoptero2 = new Helicoptero("THUT666666", "Eurocopter EC135", 8, 4);
+    Terrestre tractor = new Terrestre("1111SDA", "John Deere 8345R", 4);
+    Acuatico motoAcuatica = new Acuatico("MNBVCX", "Yamaha WaveRunner VX Cruiser", 3.35);
+    Aereo dron = new Aereo("CVDS856974", "DJI Phantom 4 Pro", 0);
 
     // ArrayList
     ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+
+    // Añadir instancias al ArrayList
+    vehiculos.add(coche1);
+    vehiculos.add(coche2);
+    vehiculos.add(moto1);
+    vehiculos.add(moto2);
+    vehiculos.add(barco1);
+    vehiculos.add(barco2);
+    vehiculos.add(submarino1);
+    vehiculos.add(submarino2);
+    vehiculos.add(avion1);
+    vehiculos.add(avion2);
+    vehiculos.add(helicoptero1);
+    vehiculos.add(helicoptero2);
+    vehiculos.add(tractor);
+    vehiculos.add(motoAcuatica);
+    vehiculos.add(dron);
+
+    // mostrar información del ArrayList
+    System.out.println("Listado de vehículos: ");
+    System.out.println("");
+    for (int i = 0; i < vehiculos.size(); i++) {
+      Vehiculo vehiculo = vehiculos.get(i);
+      vehiculo.imprimir();
+      System.out.println();
+    }
   }
 }
