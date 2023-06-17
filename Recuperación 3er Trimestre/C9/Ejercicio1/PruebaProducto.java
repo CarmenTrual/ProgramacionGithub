@@ -50,5 +50,26 @@ public class PruebaProducto {
       System.out.println(producto.getNombre() + ": " + producto.getCantidad());
     }
 
+    // Eliminar 2 elementos del ArrayList
+    Productos.remove(1);
+    Productos.remove(3);
+
+    // Insertar un producto en medio del ArrayList
+
+    // Primero hay que crear el nuevo producto
+    Producto producto6 = new Producto("Cuña", 3);
+
+    // Luego se inserta en la lista
+    Productos.add(1, producto6);
+
+    // Visualizar la lista actualizada con un bucle for
+    System.out.println("Lista actualizada: ");
+
+    for (int i = 0; i < Productos.size(); i++) {
+      Producto producto = Productos.get(i);
+      System.out.println(producto.getNombre() + ": " + producto.getCantidad());
+    }
+    // Borrar todos los elementos de la lista
+    Productos.clear();
   }
 }
