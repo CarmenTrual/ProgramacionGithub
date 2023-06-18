@@ -16,15 +16,15 @@ public class MuestraPrimos {
       BufferedReader br = new BufferedReader(new FileReader("primos.dat"));
       String linea = "";
 
-      // Leer y mostrar cada línea del archivo hasta que se alcance el final (null)
-      while (linea != null) {
-        System.out.print(linea + " "); // Imprimir la línea
-        linea = br.readLine(); // Leer la siguiente línea
+      // Leer todas las líneas del archivo y mostrar los números primos
+      for (linea = br.readLine(); linea != null; linea = br.readLine()) {
+        System.out.print(linea + " ");
       }
-      System.out.println();
-      br.close();
+      System.out.println(); // Imprimir una línea vacía después de mostrar los números primos
+      br.close(); // Cerrar el archivo después de terminar de leerlo
+
     } catch (IOException e) { // capturar cualquier error de lectura que pueda ocurrir
-      System.out.println("Error de lectura.");
+      System.out.println("Ha ocurrido un error al leer el archivo.");
     }
   }
 }
