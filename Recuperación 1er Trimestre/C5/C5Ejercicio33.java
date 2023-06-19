@@ -1,3 +1,4 @@
+
 /* C5Ejercicio33.java
 * Programa que pinte la letra U por pantalla hecha con asteriscos. El
 * programa pedirá la altura. Fíjate que el programa inserta un espacio y pinta
@@ -6,9 +7,10 @@
 * @CarmenTrual
 */
 import java.util.Scanner;
+
 public class C5Ejercicio33 {
   public static void main(String[] args) {
-    Scanner s= new Scanner (System.in);
+    Scanner s = new Scanner(System.in);
     System.out.print("Introduzca la altura de la U: ");
     int altura = s.nextInt();
 
