@@ -1,4 +1,6 @@
 /* C5Ejemplo1.java
+* Programa que muestre los números naturales hasta un valor introducido 
+* por teclado.
 * @CarmenTrual
 */
 public class C5Ejemplo1 {
