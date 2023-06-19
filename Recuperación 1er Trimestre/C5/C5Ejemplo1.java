@@ -1,5 +1,5 @@
 /* C5Ejemplo1.java
-* Programa que muestre los números naturales hasta un valor predeterminado.
+* Programa que muestra por pantalla los números pares entre 0 y 20
 * @CarmenTrual
 */
 public class C5Ejemplo1 {
